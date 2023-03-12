@@ -14,11 +14,12 @@ public class SolutionsTest {
     @BeforeEach
     void setUp() {
         Configuration.browser = "firefox";
+        Configuration.holdBrowserOpen = true;
     }
     @Test
     void solutionTest () {
 
-        Configuration.holdBrowserOpen = true;
+
         open("https://github.com/");
         $$("ul .HeaderMenu-link").findBy(Condition.text("Solutions")).hover();
         $(byText("Enterprise")).click();
